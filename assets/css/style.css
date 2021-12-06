@@ -20,6 +20,8 @@
   --input-color: hsl(var(--hue-color), 70%, 96%);
   --body-color: hsl(var(--hue-color), 60%, 99%);
   --container-color: #fff;
+  --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
+  --scroll-thumb-color: hsl(var(--hue-color), 12%, 80%);
 
   /* ============== FONT AND TYPOGRAPHY ============== */
   --body-font: 'Poppins', sans-serif;
@@ -68,8 +70,33 @@
 }
 
 /* ======================== VARIABLES DARK THEME ======================== */
+body.dark-theme {
+  --first-color-second: hsl(var(--hue-color), 30%, 8%);
+  --title-color: hsl(var(--hue-color), 8%, 95%);
+  --text-color: hsl(var(--hue-color), 8%, 75%);
+  --input-color: hsl(var(--hue-color), 29%, 16%);
+  --body-color: hsl(var(--hue-color), 28%, 12%);
+  --container-color: hsl(var(--hue-color), 29%, 16%);
+  --scroll-bar-color: hsl(var(--hue-color), 12%, 48%);
+  --scroll-thumb-color: hsl(var(--hue-color), 12%, 36%);
+}
 
 /* ======================== BUTTON DARK/LIGHT ======================== */
+.nav__btns {
+  display: flex;
+  align-items: center;
+}
+
+.change-theme {
+  font-size: 1.25rem;
+  color: var(--title-color);
+  margin-right: var(--mb-1);
+  cursor: pointer;
+}
+
+.change-theme:hover {
+  color: var(--first-color);
+}
 
 /* ======================== BASE ======================== */
 * {
@@ -234,8 +261,14 @@ img {
 }
 
 /* Active Link */
+.active-link {
+  color: var(--first-color);
+}
 
 /* Change Background Header */
+.scroll-header {
+  box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15);
+}
 
 /* ======================== HOME ======================== */
 .home__container {
@@ -781,7 +814,7 @@ img {
 
 .project__title,
 .project__description {
-  color: #000;
+  color: #fff;
 }
 
 .project__img {
@@ -876,10 +909,102 @@ img {
 }
 
 /* ======================== FOOTER ======================== */
+.footer {
+  padding-top: 2rem;
+}
+
+.footer__container {
+  row-gap: 3.5rem;
+}
+
+.footer__bg {
+  background-color: var(--first-color-second);
+  padding: 2rem 0 3rem;
+}
+
+.footer__title {
+  font-size: var(--h1-font-size);
+  margin-bottom: var(--mb-0-25);
+}
+
+.footer__subtitle {
+  font-size: var(--small-font-size);
+}
+
+.footer__links {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5rem;
+}
+
+.footer__link:hover {
+  color: var(--first-color-lighter);
+}
+
+.footer__social {
+  font-size: 1.25rem;
+  margin-right: var(--mb-1-5);
+}
+
+.footer__social:hover {
+  color: var(--first-color-lighter);
+}
+
+.footer__copy {
+  font-size: var(--smaller-font-size);
+  text-align: center;
+  color: var(--text-color-light);
+  margin-top: var(--mb-3);
+}
+
+.footer__title,
+.footer__subtitle,
+.footer__link,
+.footer__social {
+  color: #fff;
+}
 
 /* ================= SCROLL UP ================ */
+.scrollup {
+  position: fixed;
+  right: 1rem;
+  bottom: -20%;
+  background-color: var(--first-color);
+  opacity: 0.8;
+  padding: 0 0.3rem;
+  border-radius: 0.4rem;
+  z-index: var(--z-tooltip);
+  transition: 0.4s;
+}
 
+.scrollup:hover {
+  background-color: var(--first-color-alt);
+}
+
+.scrollup__icon {
+  font-size: 1.5rem;
+  color: #000;
+}
 /* Show Scroll */
+.show-scroll {
+  bottom: 5rem;
+}
+
+/* ====================== SCROLL BAR ========================= */
+::-webkit-scrollbar {
+  width: 0.6rem;
+  background-color: var(--scroll-bar-color);
+  border-radius: 0.5rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--scroll-thumb-color);
+  border-radius: 0.5rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--text-color-light);
+}
 
 /* ======================== MEDIA QUERIES ======================== */
 /* For small devices */
